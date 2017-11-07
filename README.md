@@ -15,3 +15,7 @@
 ### Parte 0 : Instalação e configuração dos Frameworks
 Tempo: aproximadamente 20 minutos
 
+### Parte 1 : CRUD
+Tempo: aproximadamente 1 hora e 40 minutos
+
+### 

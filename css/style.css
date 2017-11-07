@@ -1,0 +1,8 @@
+.relative {
+    position: relative;
+}
+
+.btn-right {
+    position: absolute;
+    right: 15px;
+}
