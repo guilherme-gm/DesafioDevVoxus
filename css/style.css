@@ -6,3 +6,32 @@
     position: absolute;
     right: 15px;
 }
+
+.site {
+    margin-top: 80px;
+}
+
+.img-sm-prof {
+    width: 25px;
+    margin-right: 3px;
+}
+
+/*****************
+ * NavBar
+ * https://bootsnipp.com/snippets/featured/account-in-navbar
+ ****************/
+.navbar-login {
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session {
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size {
+    font-size: 87px;
+}
