@@ -29,7 +29,7 @@ curl.cainfo = "<diretorio do wamp>\bin\php\php7.1.9\extras\ssl\cacert.pem"
 ## Partes
 
 ### Parte 0 : Instalação e configuração dos Frameworks
-Tempo: aproximadamente 20 minutos
+* Tempo: aproximadamente 20 minutos
 
 ### Parte 1 : CRUD
 * Tempo: aproximadamente 1 hora e 40 minutos
