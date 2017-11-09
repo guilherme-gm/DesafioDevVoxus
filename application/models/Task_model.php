@@ -4,8 +4,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Task_model extends CI_Model {
 
+    const PRIORIDADES = [
+        '1' => '1 - Muito Alta',
+        '2' => '2 - Alta',
+        '3' => '3 - Normal',
+        '4' => '4 - Baixa',
+        '5' => '5 - Muito Baixa'
+    ];
+    
     public $task_id;
     public $titulo;
+    public $descricao;
+    public $prioridade;
+    public $autor_id;
 
     /**
      * Retorna uma ou várias tasks
@@ -13,14 +24,17 @@ class Task_model extends CI_Model {
      * @return type Tasks
      */
     public function get($id = FALSE) {
-        if ($id != FALSE) {
-            $query = $this->db->get_where('tasks', ['task_id' => $id]);
-            return $query->row();
-        }
-        
-        $query = $this->db->get('tasks');
+        $query = $this->db
+                ->select('*')
+                ->from('tasks')
+                ->join('users', 'tasks.autor_id = users.user_id');
 
-        return $query->result();
+        if ($id != FALSE) {
+            return $query->get_where('', ['task_id' => $id], 1)
+                            ->row();
+        }
+
+        return $query->order_by('prioridade', 'asc')->get()->result();
     }
 
     /**
@@ -29,6 +43,9 @@ class Task_model extends CI_Model {
     public function insert() {
         $this->task_id = NULL;
         $this->titulo = $this->input->post('titulo');
+        $this->descricao = $this->input->post('descricao');
+        $this->prioridade = $this->input->post('prioridade');
+        $this->autor_id = $this->session->user->user_id;
 
         $this->db->insert('tasks', $this);
     }
@@ -38,8 +55,12 @@ class Task_model extends CI_Model {
      * @param type $task_id ID da Task
      */
     public function update($task_id) {
-        $this->task_id = NULL;
+        unset($this->task_id);
         $this->titulo = $this->input->post('titulo');
+        $this->titulo = $this->input->post('titulo');
+        $this->descricao = $this->input->post('descricao');
+        $this->prioridade = $this->input->post('prioridade');
+        unset($this->autor_id);
 
         $this->db->update('tasks', $this, ['task_id' => $task_id]);
     }

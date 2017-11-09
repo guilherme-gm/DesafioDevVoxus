@@ -35,3 +35,11 @@
 .icon-size {
     font-size: 87px;
 }
+
+/*****************
+ * Anexos / Gallery
+ * Adaptado de: https://bootsnipp.com/snippets/featured/portfolio-gallery-with-filtering-category
+ ****************/
+.gallery_product {
+    margin-bottom: 30px;
+}

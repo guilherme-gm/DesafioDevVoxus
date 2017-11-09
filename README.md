@@ -35,6 +35,7 @@ Tempo: aproximadamente 1 hora e 40 minutos
 ### Parte 2 : Login Autenticado com Google
 Tempo: aproximadamente 8 horas
 
-### Parte 3 :
+### Parte 3 : Tasks​ ​Mais​ ​Complexas 
+Tempo: cerca de 4 horas
 
 ### Parte 4 :

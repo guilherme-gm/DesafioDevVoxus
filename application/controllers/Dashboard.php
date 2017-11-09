@@ -13,6 +13,7 @@ class Dashboard extends AuthenticatedController {
         parent::__construct();
 
         $this->load->model('Task_model');
+        $this->load->model('Attachment_model');
 
         $this->data['title'] = 'Dashboard';
     }
@@ -72,6 +73,21 @@ class Dashboard extends AuthenticatedController {
         redirect();
     }
 
+    public function ver($task_id) {
+        $this->load->config('upload');
+        $this->load->library('markdown');
+        $this->data['task'] = $this->Task_model->get($task_id);
+        $this->data['files'] = $this->Attachment_model->from_task($task_id);
+        $this->render_page('dashboard/ver');
+    }
+
+    public function anexos($task_id) {
+        $this->load->config('upload');
+        $this->data['task'] = $this->Task_model->get($task_id);
+        $this->data['files'] = $this->Attachment_model->from_task($task_id);
+        $this->render_page('dashboard/anexos');
+    }
+
     private function prepare_fields($task = null) {
         $this->data['input_titulo'] = [
             //'type' => 'text', // Setado pela interface
@@ -82,6 +98,16 @@ class Dashboard extends AuthenticatedController {
             'placeholder' => 'Titulo',
             'class' => 'form-control',
         ];
+        $this->data['input_descricao'] = [
+            //'type' => 'textarea', // Setado pela interface
+            'id' => 'descricao',
+            'name' => 'descricao',
+            'required' => 'required',
+            'value' => (set_value('descricao') ?: ($task ? $task->descricao : '')),
+            'placeholder' => 'Descrição',
+            'class' => 'form-control',
+        ];
+        $this->data['prioridade'] = (set_value('prioridade') ?: ($task ? $task->prioridade : ''));
     }
 
 }
