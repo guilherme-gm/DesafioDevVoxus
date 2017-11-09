@@ -34,8 +34,13 @@ Tempo: aproximadamente 1 hora e 40 minutos
 
 ### Parte 2 : Login Autenticado com Google
 Tempo: aproximadamente 8 horas
+Dificuldades e Desafios:
+* Entender como utilizar a API do Google
+* Entender quais informações devem ser mantidas no banco de dados
 
 ### Parte 3 : Tasks​ ​Mais​ ​Complexas 
 Tempo: cerca de 4 horas
+Dificuldades e Desafios:
+* Encontrar uma solução para o upload que fosse amigável e atendesse as necessidades
 
 ### Parte 4 :
