@@ -1,10 +1,11 @@
 # Teste de Programação - Voxus
 
 ## Instruções de Uso
-### Programas
+(O desenvolvimento foi feito utilizando o WAMP, com PHP 7.1.9 e MySQL 5.7.19)
+
+### Softwares Necessários
 * Servidor Apache com PHP
 * MySQL
-(O desenvolvimento foi feito utilizando o WAMP, com PHP 7.1.9)
 
 ### Instruções
 * Crie um usuário no MySQL com nome root, sem senha
@@ -31,20 +32,20 @@ curl.cainfo = "<diretorio do wamp>\bin\php\php7.1.9\extras\ssl\cacert.pem"
 Tempo: aproximadamente 20 minutos
 
 ### Parte 1 : CRUD
-Tempo: aproximadamente 1 hora e 40 minutos
-Dificuldades e Desafios: -
+* Tempo: aproximadamente 1 hora e 40 minutos
+* Dificuldades e Desafios: -
 
 ### Parte 2 : Login Autenticado com Google
-Tempo: aproximadamente 8 horas
-Dificuldades e Desafios:
-* Entender como utilizar a API do Google
-* Entender quais informações devem ser mantidas no banco de dados
+* Tempo: aproximadamente 8 horas
+* Dificuldades e Desafios:
+    * Entender como utilizar a API do Google
+    * Entender quais informações devem ser mantidas no banco de dados
 
 ### Parte 3 : Tasks​ ​Mais​ ​Complexas 
-Tempo: cerca de 4 horas
-Dificuldades e Desafios:
-* Encontrar uma solução para o upload que fosse amigável e atendesse as necessidades
+* Tempo: cerca de 4 horas
+* Dificuldades e Desafios:
+    * Encontrar uma solução para o upload que fosse amigável e atendesse as necessidades
 
 ### Parte 4 : Tasks Completas
-Tempo: cerca de 1 hora
-Dificuldades e Desafios: -
+* Tempo: cerca de 1 hora
+* Dificuldades e Desafios: -
