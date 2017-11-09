@@ -8,6 +8,8 @@
 * MySQL
 
 ### Instruções
+* Para o correto funcionamento da API do Google, este projeto deve estar em uma pasta chamada `DesafioDevVoxus` na raiz do servidor,
+ ou seja, o `index.php` deve se encontrar na URL `localhost/DesafioDevVoxus/index.php` e deve-se utilizar a URL `localhost` e não `127.0.0.1` para acessar o site.
 * Crie um usuário no MySQL com nome root, sem senha
 * Crie um banco de dados chamado `desafiovoxus`
 * Faça o download do arquivo `cacert.pem` em: https://curl.haxx.se/docs/caextract.html
@@ -24,7 +26,8 @@
 curl.cainfo = "<diretorio do wamp>\bin\php\php7.1.9\extras\ssl\cacert.pem"
 ```
 * Salve e reinicie o servidor
-* No navegador, acesse a seguinte URL: `~/index.php/migrate` (onde `~` é a URL para a raiz do projeto) para preparar o banco de dados.
+* No navegador, acesse a seguinte URL: `localhost/DesafioDevVoxus/index.php/migrate` para preparar o banco de dados.
+* Tudo está pronto para ser usado, acesse a URL `localhost/DesafioDevVoxus/` para utilizar o site.
 
 ## Partes
 
