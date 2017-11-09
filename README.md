@@ -23,6 +23,7 @@
 curl.cainfo = "<diretorio do wamp>\bin\php\php7.1.9\extras\ssl\cacert.pem"
 ```
 * Salve e reinicie o servidor
+* No navegador, acesse a seguinte URL: `~/index.php/migrate` (onde `~` é a URL para a raiz do projeto) para preparar o banco de dados.
 
 ## Partes
 
@@ -31,6 +32,7 @@ Tempo: aproximadamente 20 minutos
 
 ### Parte 1 : CRUD
 Tempo: aproximadamente 1 hora e 40 minutos
+Dificuldades e Desafios: -
 
 ### Parte 2 : Login Autenticado com Google
 Tempo: aproximadamente 8 horas
@@ -43,4 +45,6 @@ Tempo: cerca de 4 horas
 Dificuldades e Desafios:
 * Encontrar uma solução para o upload que fosse amigável e atendesse as necessidades
 
-### Parte 4 :
+### Parte 4 : Tasks Completas
+Tempo: cerca de 1 hora
+Dificuldades e Desafios: -

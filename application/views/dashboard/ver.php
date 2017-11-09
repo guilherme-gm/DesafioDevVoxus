@@ -1,10 +1,18 @@
-<div class='panel panel-default'>
+<div class='panel <?php if (!$task->feito_por): ?>panel-default<?php else: ?>panel-success<?php endif; ?>'>
     <div class='panel-heading relative'>
-        <a href="<?= site_url('dashboard') ?>" class='btn btn-default btn-right'>Voltar</a>
+        <div class="panel-right">
+            <?php if (!$task->feito_por): ?>
+                <a href="<?= site_url('dashboard/completar/' . $task->task_id) ?>" class='btn btn-success'>Completar</a>
+            <?php endif; ?>
+            <a href="<?= site_url('dashboard') ?>" class='btn btn-default'>Voltar</a>
+        </div>
         <h3>Visualizando Task: <i><?= $task->titulo ?></i></h3>
     </div>
     <div class="panel-body">
-        <p><b>Criado por: </b> <?= $task->nome ?></p>
+        <p><b>Criado por: </b> <?= $task->autor ?></p>
+        <?php if ($task->feito_por != NULL): ?>
+            <p><b>Completada por: </b> <?= $task->feito_por ?></p>
+        <?php endif; ?>
         <p><b>Prioridade: </b> <?= $this->Task_model::PRIORIDADES[$task->prioridade] ?></p>
         <p><b>Descrição: </b></p>
         <p><?= $this->markdown->text(nl2br($task->descricao)) ?></p>

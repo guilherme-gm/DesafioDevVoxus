@@ -21,7 +21,9 @@ class Attachment_model extends CI_Model {
     }
 
     /**
-     * Insere um attachment
+     * Insere um attachment em uma task
+     * @param integer $task_id ID da Task
+     * @return mixed ID do attachment ou mensagem de erro.
      */
     public function insert($task_id) {
         if (!$this->upload->do_upload('file')) {
@@ -41,7 +43,7 @@ class Attachment_model extends CI_Model {
 
     /**
      * Remove um attachment
-     * @param type $attach_id ID do Attachment
+     * @param integer $attach_id ID do Attachment
      */
     public function delete($attach_id) {
         $this->config->load('upload');
@@ -52,6 +54,11 @@ class Attachment_model extends CI_Model {
         return true;
     }
 
+    /**
+     * Retorna os attachments de uma task
+     * @param integer $task_id ID da Task
+     * @return Array
+     */
     public function from_task($task_id) {
         return $this->db->get_where('attachments', ['task_id' => $task_id])->result();
     }

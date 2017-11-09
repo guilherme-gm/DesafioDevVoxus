@@ -3,7 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * Controller para a Dashboard
+ * Controller para Autenticação
  *
  * @author guilh
  */
@@ -17,6 +17,9 @@ class Auth extends MY_Controller {
         $this->load->model('User_model');
     }
 
+    /**
+     * Pagina inicial/Login
+     */
     public function index() {
         $this->data['title'] = 'Login';
 
@@ -43,6 +46,9 @@ class Auth extends MY_Controller {
         $this->render_page('auth/index');
     }
 
+    /**
+     * Logout
+     */
     public function logout() {
         $this->session->unset_userdata('google_token');
         $this->session->unset_userdata('user');

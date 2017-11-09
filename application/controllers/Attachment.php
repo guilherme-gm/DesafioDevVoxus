@@ -3,7 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * Controller para a Dashboard
+ * Controller para anexos em Tasks
  *
  * @author guilh
  */
@@ -18,7 +18,15 @@ class Attachment extends AuthenticatedController {
         $this->data['title'] = 'Dashboard';
     }
 
-    public function upload($task_id) {
+    /**
+     * Upload de um anexo
+     * @param int $task_id Task que receberá o anexo
+     */
+    public function upload($task_id = 0) {
+        if ($task_id == 0) {
+            exit;
+        }
+
         $this->load->library('upload');
         $ret = $this->Attachment_model->insert($task_id);
         $res = [];
@@ -32,19 +40,44 @@ class Attachment extends AuthenticatedController {
         exit;
     }
 
-    public function remove($attach_id) {
+    /**
+     * Remove um anexo
+     * @param int $attach_id id do anexo
+     */
+    public function remove($attach_id = 0) {
+        if ($attach_id == 0) {
+            exit;
+        }
+
         $this->Attachment_model->delete($attach_id);
         echo "OK";
         exit;
     }
 
-    public function fake_thumbnail($size, $text) {
+    /**
+     * Gera um thumbnail falso
+     * @param string $size tamanho ('small' ou 'big')
+     * @param string $text texto
+     */
+    public function fake_thumbnail($size = '', $text = NULL) {
+        if (empty($size) || $text == NULL) {
+            exit;
+        }
+
         $this->data['text'] = $text;
         $this->data['size'] = $size;
         $this->load->view('attachment/fake_thumbnail', $this->data);
     }
 
-    public function download($attach_id) {
+    /**
+     * Faz o download de um anexo
+     * @param integer $attach_id ID do anexo
+     */
+    public function download($attach_id = 0) {
+        if ($attach_id == 0) {
+            exit;
+        }
+
         $this->load->config('upload');
 
         $attach = $this->Attachment_model->get($attach_id);

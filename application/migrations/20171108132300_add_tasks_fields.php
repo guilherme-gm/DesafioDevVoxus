@@ -27,7 +27,7 @@ class Migration_Add_Tasks_Fields extends CI_Migration {
     }
 
     public function down() {
-        $this->dbforge->drop_column('tasks', ['descricao', 'prioridade', 'autor']);
+        $this->dbforge->drop_column('tasks', ['descricao', 'prioridade', 'autor_id']);
     }
 
 }

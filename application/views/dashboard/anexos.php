@@ -3,7 +3,7 @@
 
 <div class='panel panel-default'>
     <div class='panel-heading relative'>
-        <a href="<?= site_url('dashboard/ver/' . $task->task_id) ?>" class='btn btn-success btn-right'>Feito</a>
+        <a href="<?= site_url('dashboard/ver/' . $task->task_id) ?>" class='btn btn-success panel-right'>Feito</a>
         <h3>Atualizando anexos da Task: <i><?= $task->titulo ?></i></h3>
     </div>
     <div class="panel-body">

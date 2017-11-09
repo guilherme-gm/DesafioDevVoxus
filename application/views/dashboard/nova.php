@@ -1,6 +1,6 @@
 <div class='panel panel-default'>
     <div class='panel-heading relative'>
-        <a href="<?= site_url('dashboard') ?>" class='btn btn-danger btn-right'>Cancelar</a>
+        <a href="<?= site_url('dashboard') ?>" class='btn btn-danger panel-right'>Cancelar</a>
         <h3>Nova Task</h3>
     </div>
     <div class="panel-body">

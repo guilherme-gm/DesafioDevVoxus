@@ -61,7 +61,7 @@ class Dashboard extends AuthenticatedController {
 
         $task = $this->Task_model->get($id);
         if ($task == null) {
-            redirect('');
+            redirect('dashboard');
         }
 
         $this->prepare_fields($task);
@@ -73,10 +73,16 @@ class Dashboard extends AuthenticatedController {
         redirect();
     }
 
-    public function ver($task_id) {
+    public function ver($task_id = 0) {
         $this->load->config('upload');
         $this->load->library('markdown');
-        $this->data['task'] = $this->Task_model->get($task_id);
+
+        $task = $this->Task_model->get($task_id);
+        if ($task == NULL) {
+            redirect('dashboard');
+        }
+
+        $this->data['task'] = $task;
         $this->data['files'] = $this->Attachment_model->from_task($task_id);
         $this->render_page('dashboard/ver');
     }
@@ -86,6 +92,11 @@ class Dashboard extends AuthenticatedController {
         $this->data['task'] = $this->Task_model->get($task_id);
         $this->data['files'] = $this->Attachment_model->from_task($task_id);
         $this->render_page('dashboard/anexos');
+    }
+
+    public function completar($task_id) {
+        $this->Task_model->done($task_id);
+        redirect('dashboard/ver/' . $task_id);
     }
 
     private function prepare_fields($task = null) {

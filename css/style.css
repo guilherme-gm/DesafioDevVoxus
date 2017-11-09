@@ -1,19 +1,27 @@
+/* Botão nos paineis */
 .relative {
     position: relative;
 }
 
-.btn-right {
+.panel-right {
     position: absolute;
     right: 15px;
 }
 
+/* Container do site */
 .site {
     margin-top: 80px;
 }
 
+/* Perfil */
 .img-sm-prof {
     width: 25px;
     margin-right: 3px;
+}
+
+/* Linha de Task completa */
+.row-success {
+    background-color: #99ff99 !important;
 }
 
 /*****************
